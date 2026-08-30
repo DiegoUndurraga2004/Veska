@@ -1,0 +1,108 @@
+import { mockTenantId } from "@/mocks/tenants.mock";
+import type { Space } from "@/types/spaces";
+
+export const mockSpaceIds = {
+  general: "44444444-4444-4444-8444-444444444451",
+  finance: "44444444-4444-4444-8444-444444444452",
+  legal: "44444444-4444-4444-8444-444444444453",
+  legalContracts: "44444444-4444-4444-8444-444444444454",
+  operations: "44444444-4444-4444-8444-444444444455",
+  projects: "44444444-4444-4444-8444-444444444456",
+  projectA: "44444444-4444-4444-8444-444444444457",
+  projectBConfidential: "44444444-4444-4444-8444-444444444458",
+} as const;
+
+export const mockSpaces: Space[] = [
+  {
+    id: mockSpaceIds.general,
+    tenant_id: mockTenantId,
+    parent_space_id: null,
+    name: "General",
+    path: "General",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:00:00Z",
+    updated_at: "2026-05-01T10:00:00Z",
+  },
+  {
+    id: mockSpaceIds.finance,
+    tenant_id: mockTenantId,
+    parent_space_id: null,
+    name: "Finanzas",
+    path: "Finanzas",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:05:00Z",
+    updated_at: "2026-05-01T10:05:00Z",
+  },
+  {
+    id: mockSpaceIds.legal,
+    tenant_id: mockTenantId,
+    parent_space_id: null,
+    name: "Legal",
+    path: "Legal",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:10:00Z",
+    updated_at: "2026-05-01T10:10:00Z",
+  },
+  {
+    id: mockSpaceIds.legalContracts,
+    tenant_id: mockTenantId,
+    parent_space_id: mockSpaceIds.legal,
+    name: "Contratos",
+    path: "Legal/Contratos",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:15:00Z",
+    updated_at: "2026-05-01T10:15:00Z",
+  },
+  {
+    id: mockSpaceIds.operations,
+    tenant_id: mockTenantId,
+    parent_space_id: null,
+    name: "Operaciones",
+    path: "Operaciones",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:20:00Z",
+    updated_at: "2026-05-01T10:20:00Z",
+  },
+  {
+    id: mockSpaceIds.projects,
+    tenant_id: mockTenantId,
+    parent_space_id: null,
+    name: "Proyectos",
+    path: "Proyectos",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:25:00Z",
+    updated_at: "2026-05-01T10:25:00Z",
+  },
+  {
+    id: mockSpaceIds.projectA,
+    tenant_id: mockTenantId,
+    parent_space_id: mockSpaceIds.projects,
+    name: "Proyecto A",
+    path: "Proyectos/Proyecto A",
+    visibility: "restricted",
+    inherits_permissions: true,
+    created_at: "2026-05-01T10:30:00Z",
+    updated_at: "2026-05-01T10:30:00Z",
+  },
+  {
+    id: mockSpaceIds.projectBConfidential,
+    tenant_id: mockTenantId,
+    parent_space_id: mockSpaceIds.projects,
+    name: "Proyecto B Confidencial",
+    path: "Proyectos/Proyecto B Confidencial",
+    visibility: "restricted",
+    inherits_permissions: false,
+    created_at: "2026-05-01T10:35:00Z",
+    updated_at: "2026-05-01T10:35:00Z",
+  },
+];
+
+export const mockAccessibleSpaces = mockSpaces;
+
+export const mockUploadableSpaces = mockAccessibleSpaces;
